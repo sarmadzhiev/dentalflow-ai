@@ -739,3 +739,160 @@ button {
     font-size: 30px;
   }
 }
+/* ===== DentalFlow inquiries module ===== */
+
+.inquiry-form-panel,
+.inquiries-panel {
+  margin-top: 28px;
+}
+
+.inquiry-form-panel {
+  max-width: 860px;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inquiry-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cddbe5;
+  border-radius: 11px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+  resize: vertical;
+}
+
+.inquiry-form input:focus,
+.inquiry-form textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(18, 103, 232, 0.12);
+}
+
+.inquiry-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.inquiry-notice {
+  margin-top: 24px;
+}
+
+.inquiry-count {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.inquiry-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inquiries-list {
+  margin-top: 16px;
+}
+
+.inquiry-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.inquiry-main {
+  min-width: 0;
+}
+
+.inquiry-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inquiry-title-row h3 {
+  margin: 0;
+}
+
+.inquiry-card p {
+  margin: 10px 0;
+  color: var(--muted);
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.inquiry-card time {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.inquiry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status-new {
+  background: #e8f2ff;
+  color: #1267e8;
+}
+
+.status-contacted {
+  background: #fff5d9;
+  color: #8a6300;
+}
+
+.status-booked {
+  background: #e8f7ef;
+  color: #197247;
+}
+
+.status-closed {
+  background: #edf0f3;
+  color: #596777;
+}
+
+@media (max-width: 700px) {
+  .inquiry-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inquiry-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .button,
+  .form-actions button {
+    width: 100%;
+  }
+}
