@@ -22,6 +22,7 @@ export async function createInquiry(formData: FormData) {
   }
 
   const supabase = await createClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -54,11 +55,18 @@ export async function createInquiry(formData: FormData) {
 
   if (error) {
     redirect(
-      `/dashboard/inquiries/new?error=${encodeURIComponent(error.message)}`
+      `/dashboard/inquiries/new?error=${encodeURIComponent(
+        error.message
+      )}`
     );
   }
 
   revalidatePath("/dashboard");
   revalidatePath("/dashboard/inquiries");
-  redirect("/dashboard/inquiries?message=Запитването е добавено");
+
+  redirect(
+    `/dashboard/inquiries?message=${encodeURIComponent(
+      "Запитването е добавено успешно."
+    )}`
+  );
 }
